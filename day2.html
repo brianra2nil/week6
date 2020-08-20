@@ -1,20 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>
         <a href="index.html">Day1</a>
         <a href="day2.html">Day2</a>
         <a href="day3.html">Day3</a>
     </h1>
-<hr>
-    <h1>Day2</h1>
-<img src="./pics/day2a.png" alt="">
+    <hr>
+    <h1>Day2: github https://github.com/QFults/exp003</h1>
+    <hr>
+    <img src="./pics/day2a.png" alt="">
+    <hr>
+    <img src="./pics/day2b.png" alt="">
+    <p>
+        What does 'req' and 'res' stand for? Request (the URL, params, and queries) and Response (how we want to
+        respond to the request. Yesterday we sent am html file back. You can also send a status code or a console log
+        etc...)
+    </p>
+    <hr>
+    <p>How to start an app:
+        <li>make a server.js file</li>
+        <li>initialize npm: type "npm init -y" in console </li>
+        <li>install express: type "npm i express" in console</li>
+        <li>make a .gitignore file in the root folder</li>
+    <p></p>
+    <li>3 lines to start your server (type it in server.js) below:</li>
+    <ul>const express = require('express'</ul>
+    <ul>const app = express()</ul>
+    <ul>app.listen(3000)</ul>
+    </p>
+    </li>
+    </p>
+    <p>type in "nodemon" in the console. Everytime u make a change and save, it will restart the server.</p>
+    <img src="./pics/day2c.png" alt="">
+    <hr>
+    <h1>more working with postman</h1>
+    <img src="./pics/day2d.png" alt="">
+    <hr>
+    <h1>How to use a request query to call a name that the user types in</h1>
+    <p>add to the url: ?n=John Doe</p>
+    <p>gives request query... </p>
+    <img src="./pics/day2f.png" alt="">
+    <hr>
+    <h1>Console log req.query</h1>
+    <p>"req.query" is actually and object with the key value pair that we created in the previous screenshot. (n=John
+        Doe)</p>
+    <img src="./pics/day2g.png" alt="">
+    <hr>
+    <h1>Multiple "req.query" separated by an "&"</h1>
+    <img src="./pics/day2h.png" alt="">
+    <hr>
+    <h1>Now type req.query.n to get the value of "n" (in this case John Doe)</h1>
+    <img src="./pics/day2i.png" alt="">
+    <hr>
+    <h1>Now take the req.query.n and use it in a temperate literal inside the res.send.</h1>
+    <img src="./pics/day2j.png" alt="">
+    <hr>
+    <h1>Now you the user can enter any name</h1>
+    <img src="./pics/day2k.png" alt="">
+    <hr>
+    <h1>Now for request.params ...They are more specified.</h1>
+    <p>Params are variable values that appear on your route. You express them in your route's pattern.</p>
+    <img src="./pics/day2l.png" alt="">
+    <hr>
+    <h1>Now let's console log it</h1>
+    <img src="./pics/day2m.png" alt="">
+    <hr>
+    <h1>Now send it back in a greeting in a temperate literal</h1>
+    <img src="./pics/day2n.png" alt="">
+    <p>"localhost:3000/name" does not exist anymore. </p>
+    <p>
+        Now it's specific and the user has to put in a name. Example:
+        "localhost:3000/name/Brian"</p>
+    </p>
+    <hr>
+    <h1>CALCULATOR APP ACTIVITY!</h1>
+    <img src="./pics/day2o.png" alt="">
+    <br>
+    <img src="./pics/day2p.png" alt="">
+    <hr>
+    <h1>TO DO LIST ACTIVITY!!</h1>
+    <p>
+    in order to make a to do list app, we need to be able to create to do list items. In order to do that we need a
+        post route. We can't get data out of it, so we need to setup our app to accept JSON data. In order to do that we
+        need to declare something called "middleware"
+        middlewear steps in between your front end and backend.
+    </p>
+    <p>the way that you declare middleware is with a method in express app called "app.use()"</p>
+    <img src="./pics/day2q.png" alt="">
+    <hr>
+    <h1>This is going to be a boiler plate like in HTML.  copy and paste every single time.  No need to spend effort memorizing it.</h1>
+    <img src="./pics/day2r.png" alt="">
+    <hr>
+    <h1>You can use one line to hookup all your front end files.  Requirement needs to have a public folder, and the main html page has to be named index.html</h1>
+    <p><h3>So this is the real boiler plate:</h3></p>
+    <p>const express = require('express') <br>
+        const { join } = require('path') <br>
+        
+        const app = express() <br>
 
+        <br>
+        app.use(express.static(join(__dirname, 'public'))) <br>
+        app.use(express.urlencoded({ extended: true })) <br>
+        app.use(express.json()) <br>
+        
+        app.use(require('./routes')) <br>
+        <br>
+        app.listen(process.env.PORT || 3000) <br>
+    </p>
+    <img src="./pics/day2s.png" alt="">
+    <hr>
     
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
 </html>
