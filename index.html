@@ -1,78 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>week6</title>
 </head>
+
 <body>
     <h1>
-    <a href="index.html">Day1</a>
-    <a href="day2.html">Day2</a>
-    <a href="day3.html">Day3</a>
-</h1>
+        <a href="index.html">Day1</a>
+        <a href="day2.html">Day2</a>
+        <a href="day3.html">Day3</a>
+    </h1>
 
-<h1>Day 1</h1>
-<img src="./pics/day1.png" alt="">
+    <h1>Day 1</h1>
+    <img src="./pics/day1.png" alt="">
 
-<img src="./pics/day1b.png" alt="">
-<hr>
-<p>HTTP verbs:
-    <li>GET - retrieve data</li>
-    <li>POST - make something new</li>
-    <li>PUT - modify data</li>
-    <li>DELETE - remove it entirely</li>
-</p>
-<p>.gitignore file needed so when you are pushing to github you don't have a million files to send up.</p>
-<p>go to gitignore.io</p>
-<p>type in windows and node on the search bar and hit create</p>
-<p>copy the results and paste them in a file you create called .gitignore in the root directory of your app</p>
+    <img src="./pics/day1b.png" alt="">
+    <hr>
+    <p>HTTP verbs:
+        <li>GET - retrieve data</li>
+        <li>POST - make something new</li>
+        <li>PUT - modify data</li>
+        <li>DELETE - remove it entirely</li>
+    </p>
+    <p>.gitignore file needed so when you are pushing to github you don't have a million files to send up.</p>
+    <p>go to gitignore.io</p>
+    <p>type in windows and node on the search bar and hit create</p>
+    <p>copy the results and paste them in a file you create called .gitignore in the root directory of your app</p>
 
-<hr>
-<h1>The old way to build servers in NODE before Express was created.  Probably not going to get used very much.  Likely that all companies use Express.</h1>
-<img src="./pics/day1c.png" alt="">
-<hr>
-<h1>Now the "better" way to build servers with EXPRESS.  https://expressjs.com/</h1>
-<p>Make a "server.js" file, then type in the console: "npm init -y" to initialize</p>
-<p>Type "npm i express" in the console to install the express package</p>
-<p>NOW TO BRING EXPRESS INTO OUR PAGE WITH 3 LINES OF CODE BELOW:</p>
-<img src="./pics/day1d.png" alt="">
-<p>Line 1 is to bring in the express package</p>
-<p>Line 2 is to create an express server.  We like to call it "app'"</p>
-<p>Line 3 is to tell the app to listen on a port.  3000 is common dev practice</p>
-<p>Now you can start the server by typing in the console: "node server.js"  *nothing happens in browser</p>
-<hr>
-<h1>How to use the "app.get()" method to handle get requests.</h1>
-<p>app.get('/test', () => { <br><br> })</p>
-<p>The above means when you run "localhost:3000/test" in the browser you will define what happens with this function.  We will try it with a console log below:</p>
-<img src="./pics/day1e.png" alt="">
-<hr>
-<p><h1>Now we add req and res and we can send things to the browser as a response (when you type "localhost:3000/test")</p></h1>
-<img src="./pics/day1f.png" alt="">
-<hr>
-<p><h1>"res.json()" lets you send back javascript data like an object:</p></h1>
-<img src="./pics/day1g.png" alt="">
-<hr>
-<p><h1>"res.sendFile()" lets you send a file, like an html file to render on the browser, by providing the file path.</p></h1>
-<img src="./pics/day1h.png" alt="">
-<p>The code above only works if your "index.html" is in the same folder as your "server.js:</p>
-<hr>
-<h1>it's best practice to put your front end files like "index.html" in a folder called "public" to make your folder look more clean</h1>
-<p>Now that we changed the file path, we also have to change the code so our app can find "index.html" it's no longer in the same folder as "server.js"</p>  
-<img src="./pics/day1j.png" alt="">
-<hr>
-<h1>THE ACTIVITY OF YOUR FAVORITES (MOVIES, SONGS, FOOD, GAMES</h1>
-write the "app.get()"" code 4 times for movies, songs, food, games.
-<img src="./pics/day1i.png" alt="">
-<hr>
-<h1>create four .html files for movies, songs, food, games, with a simple h1 tag to render on the screen.</h1>
-<p>remember to put your front end files in a "public" folder.</p>
-<img src="./pics/day1k.png" alt="">
-<hr>
-<h1>Now to use the res.sendFile() to render your html files in the browser</h1>
-<p> **Adding in a little bit of de-structuring:</p>
-<h1>BEFORE:</h1>
-<img src="" alt="">
+    <hr>
+    <h1>The old way to build servers in NODE before Express was created. Probably not going to get used very much.
+        Likely that all companies use Express.</h1>
+    <img src="./pics/day1c.png" alt="">
+    <hr>
+    <h1>Now the "better" way to build servers with EXPRESS. https://expressjs.com/</h1>
+    <p>Make a "server.js" file, then type in the console: "npm init -y" to initialize</p>
+    <p>Type "npm i express" in the console to install the express package</p>
+    <p>NOTE: if you cloned a repository, just type "npm i" to get all the packages it used. The above is only if you are
+        starting the app from your local computer</p>
+    <p>NOW TO BRING EXPRESS INTO OUR PAGE WITH 3 LINES OF CODE BELOW:</p>
+    <img src="./pics/day1d.png" alt="">
+    <p>Line 1 is to bring in the express package</p>
+    <p>Line 2 is to create an express server. We like to call it "app'"</p>
+    <p>Line 3 is to tell the app to listen on a port. 3000 is common dev practice</p>
+    <p>Now you can start the server by typing in the console: "node server.js" *nothing happens in browser</p>
+    <hr>
+    <h1>How to use the "app.get()" method to handle get requests.</h1>
+    <p>app.get('/test', () => { <br><br> })</p>
+    <p>The above means when you run "localhost:3000/test" in the browser you will define what happens with this
+        function. We will try it with a console log below:</p>
+    <img src="./pics/day1e.png" alt="">
+    <hr>
+    <p>
+    <h1>Now we add req and res and we can send things to the browser as a response (when you type "localhost:3000/test")
+        </p>
+    </h1>
+    <img src="./pics/day1f.png" alt="">
+    <hr>
+    <p>
+    <h1>"res.json()" lets you send back javascript data like an object:</p>
+    </h1>
+    <img src="./pics/day1g.png" alt="">
+    <hr>
+    <p>
+    <h1>"res.sendFile()" lets you send a file, like an html file to render on the browser, by providing the file path.
+        </p>
+    </h1>
+    <img src="./pics/day1h.png" alt="">
+    <p>The code above only works if your "index.html" is in the same folder as your "server.js:</p>
+    <hr>
+    <h1>it's best practice to put your front end files like "index.html" in a folder called "public" to make your folder
+        look more clean</h1>
+    <p>Now that we changed the file path, we also have to change the code so our app can find "index.html" it's no
+        longer in the same folder as "server.js"</p>
+    <img src="./pics/day1j.png" alt="">
+    <hr>
+    <h1>THE ACTIVITY OF YOUR FAVORITES (MOVIES, SONGS, FOOD, GAMES</h1>
+    write the "app.get()"" code 4 times for movies, songs, food, games.
+    <img src="./pics/day1i.png" alt="">
+    <hr>
+    <h1>create four .html files for movies, songs, food, games, with a simple h1 tag to render on the screen.</h1>
+    <p>remember to put your front end files in a "public" folder.</p>
+    <img src="./pics/day1k.png" alt="">
+    <hr>
+    <h1>Now to use the res.sendFile() to render your html files in the browser</h1>
+    <p> **Adding in a little bit of de-structuring:</p>
+    <h1>BEFORE DE-STRUCTURE:</h1>
+    <img src="./pics/day1l.png" alt="">
+    <h1>AFTER DE-STRUCTURE:</h1>
+    <img src="./pics/day1m.png" alt="">
+    <hr>
+    <h1>Reapeat for all four categories/.html files</h1>
+    <img src="./pics/day1n.png" alt="">
+    <hr>
+    <h1>save your work and start your server by typing "node server.js" in the console.</h1>
+    <p>type the address in the browser: localhost:3000/games and you should see the html file render:</p>
+    <img src="./pics/day1o.png" alt="">
+    <hr>
+    <h1>CONGRATULATIONS!!! YOU RENDERED AN HTML FILE TO THE FRONT END by CODING IN THE BACKEND!!! Now for POST/PUT/and
+        DELETE</h1>
+    <p>-Download Postman @ https://www.postman.com/downloads/</p>
+    <p>Open postman and then sign up or sign in.</p>
+    <p>Click on "launchpad" and then "create a request"</p>
+    <img src="./pics/day1p.png" alt="">
+    <hr>
+    <h1>You should end up on this screen:</h1>
+    <p>if you type "localhost:3000/games" like before, you can see the html file.</p>
+    <img src="./pics/day1q.png" alt="">
+    <hr>
+    <h1>Now add a line of code for "post"</h1>
+    <p>remember to save and stop and restart your server. CTRL+c to stop. node server.js to start</p>
+    <img src="./pics/day1r.png" alt="">
+    <hr>
+    <h1>Now this is how the post will look based on the code entered:</h1>
+    <img src="./pics/day1s.png" alt="">
+    <p>Note: an "app.get" in your code will not work with an "app.post" in postman. Both the verb and the route need to match for it to
+        trigger. This also means you can use '/movies' for different verbs without conflictS.  
+    </p>
+    <hr>
+    <h1>Annoyed by stopping and restarting server?  Download "nodemon".  once installed globally you just have to type "nodemon" in the console to start it.  </h1>
+    <hr>
+    
+
+
+
+
+
 
 
 
@@ -88,4 +143,5 @@ write the "app.get()"" code 4 times for movies, songs, food, games.
 
 
 </body>
+
 </html>
